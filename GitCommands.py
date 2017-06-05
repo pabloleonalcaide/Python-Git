@@ -3,6 +3,11 @@ __author__ = "Pablo Leon Alcaide"
 import git
 import os
 
+
+def getOption():
+    option = int(raw_input('\nSelecciona una opcion:\n\t1-Comprobar status\n\t2-Realizar commit\n\t3-Salir'))
+    return option
+
 print 'Bienvenido al asistente de git'
 
 #insert the path
@@ -14,7 +19,7 @@ if os.path.isdir(ruta):
         print 'repositorio encontrado'
         repositorio = git.Repo(ruta)
         try:
-            opcion = int(raw_input('\nSelecciona una opcion:\n\t1-Comprobar status\n\t2-Realizar commit\n\t3-Salir'))
+            opcion = getOption()
             while True:
                 if opcion == 1:
                     #check the status
@@ -25,8 +30,9 @@ if os.path.isdir(ruta):
                     comentario = raw_input('comentario para el commit: ')
                     print repositorio.git.commit( m=comentario)
                 elif opcion == 3:
+                    print 'bye!'
                     break
-                opcion = int(raw_input('\nSelecciona una opcion:\n\t1-Comprobar status\n\t2-Realizar commit\n\t3-Salir'))
+                opcion = getOption()
 
         except ValueError:
             print 'Introduciste una opcion incorrecta'
