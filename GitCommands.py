@@ -1,7 +1,7 @@
 __author__ = "Pablo Leon Alcaide"
-#import git and os repository, we need the os repository to check de path
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+#import git and os repository, we need the os repository to check de path
 import git
 import os
 
@@ -37,6 +37,7 @@ if os.path.isdir(ruta):
                     print repositorio.git.commit( m=comentario)
                 elif opcion == 3:
                     fichero = raw_input('indica el nombre del fichero')
+                    #check if 'fichero' is a file
                     if os.path.isfile(fichero):
                         print repositorio.git.add('fichero')
                         comentario = raw_input('comentario para el commit: ')
