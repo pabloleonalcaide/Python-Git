@@ -9,6 +9,7 @@ import os
 def getOption():
     option = (int(raw_input('\nSelecciona una opcion:\n\t1-Comprobar status\
         \n\t2-Insertarlo todo\n\t3-Insertar fichero especifico\n\t4-Salir')))
+    print ' '
 
     return option
 print ' '
